@@ -1,8 +1,8 @@
 <?php
    /*
    Plugin Name: UM Extend Profile Progress
-   Description: Extension for Ultimate Member Plugin
-   Version: 1.0.0
+   Description: Extension for Ultimate Member Plugin. Add a Profile Progress using a shortcode.	
+   Version: 1.0.1
    License: GPL2
    */
 
@@ -83,7 +83,9 @@ class UM_Extend_Profile_Progress {
 	    // begin output buffering
 	    ob_start();
 
-		echo $progress;
+		//echo $progress;
+
+		include( plugin_dir_path( __FILE__ ) . 'profile-progress/progress-bar.php');
 
 		// end output buffering, grab the buffer contents, and empty the buffer
     	return ob_get_clean();
