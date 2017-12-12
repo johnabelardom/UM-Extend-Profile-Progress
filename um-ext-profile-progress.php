@@ -2,7 +2,7 @@
    /*
    Plugin Name: UM Extend Profile Progress
    Description: Extension for Ultimate Member Plugin. Add a Profile Progress using a shortcode.	
-   Version: 1.0.1
+   Version: 1.0.2
    License: GPL2
    */
 
@@ -73,6 +73,10 @@ class UM_Extend_Profile_Progress {
 
 		$len = sizeof($user_info);
 		$d = 0;
+
+		if ($len == 0) {
+			return;
+		}
 
 		foreach ($user_info as $key => $value) {
 			$d += $value != "" ? 1 : 0;
